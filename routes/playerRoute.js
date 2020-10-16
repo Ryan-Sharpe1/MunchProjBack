@@ -8,12 +8,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get("/", (req, res) =>{
-res.send("this is posts route")
+Post.findOne({'PlayerName':'tot'}, function (err,person){
+  if (err) return handleError(err);
+  console.log(person.PlayerName)
+  res.send(person.PlayerName)
+}) 
 
 })
 
 app.post('/',(req,res)=>{
   const player = new Post({ PlayerName: req.body.PlayerName})
+  console.log(req.body)
   player.save()
     .then(data => {res.json(data)}).catch(err => { res.json({message: err})})
   
