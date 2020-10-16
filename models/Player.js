@@ -18,32 +18,32 @@ const PlayerSchema = mongoose.Schema({
 
     Head: {
         type: String,
-        default: ""
+        default: "Missing"
     },
 
     Chest: {
         type: String,
-        default: ""
+        default: "Missing"
     },
 
     oneHand: {
         type: String,
-        default: ""
+        default: "Missing"
     },
 
     mainHand: {
         type: String,
-        default: ""
+        default: "Missing"
     },
 
     Legs: {
         type: String,
-        default: ""
+        default: "Missing"
     },
 
     Feet: {
         type: String,
-        default: ""
+        default: "Missing"
     },
 
     timeStamp: {

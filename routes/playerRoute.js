@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get("/findPlayer", (req, res) =>{
-Player.findOne({'PlayerName':'chicken eggs'}, function (err,person){
+Player.findOne({'PlayerName':'Oli'}, function (err,person){
   if (err) return handleError(err);
   console.log(person)
   res.send(person)
@@ -18,10 +18,13 @@ Player.findOne({'PlayerName':'chicken eggs'}, function (err,person){
 
 
 app.get("/allPlayerNames", (req, res) => {
+  listOfPlayers = [];
   Player.find({}, function (err,data){
     if (err) return handleError(err);
-    console.log(data[0].PlayerName)
-    res.send(data[0].PlayerName)
+    for(var i=0; i< data.length;i++){
+      listOfPlayers.push(data[i].PlayerName)
+    }
+    res.send(listOfPlayers)
   })
 })
 
