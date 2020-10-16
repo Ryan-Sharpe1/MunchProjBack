@@ -10,7 +10,7 @@ app.use(cors())
 
 //Middleware
 
-var postRoute = require ('./routes/playerRoute')
+var playerRoute = require ('./routes/playerRoute')
 
 
 //Routes in main page
@@ -21,7 +21,7 @@ app.get('/', function(req, res, next) {
 
 //Routes
 
-app.use('/post', postRoute)
+app.use('/player', playerRoute)
 
 
 
